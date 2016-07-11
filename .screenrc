@@ -1,0 +1,41 @@
+# This is how one can set a reattach password:
+# password ODSJQf.4IJN7E        # "1234"
+
+# no annoying audible bell, please
+vbell off
+
+# detach on hangup
+autodetach on
+
+# don't display the copyright page
+startup_message off
+
+# emulate .logout message
+pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$nl:ended."
+defscrollback 9000
+
+# Switches to alternate screen like xterm-color
+altscreen on
+
+# Let scrollbars work in xterm, gnome-terminal
+# (from http://www4.informatik.uni-erlangen.de/~jnweiger/screen-faq.html)
+termcapinfo xterm* ti@:te@
+
+# Turn Activity Monitoring On
+defmonitor on
+
+# Turn Silence Monitoring On
+defsilence on
+silencewait 20
+
+msgwait 1
+nethack on
+nonblock on
+
+# advertise hardstatus support to $TERMCAP
+# termcapinfo * '' 'hs:ts=\E_:fs=\E\\:ds=\E_\E\\'
+
+# make the shell in every window a login shell
+#### shell -$SHELL
+
+source "${HOME}/.screenrc.${HOSTNAME}"
